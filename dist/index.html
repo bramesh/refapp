@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Output Management</title>
+  <link rel="shortcut icon" href="favicon.ico"></head>
+  <body>
+  
+  <script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="app.bundle.js"></script>
+  <script type="text/javascript">
+  	class Shape {
+  		area() {
+  			return this;
+  		}
+  		static hello() {
+  			return this;
+  		}
+  	}
+
+  	function Rectangle() {
+  		console.log('test');
+  	}
+
+  	Rectangle.prototype.area = function() {
+  		return this;
+  	}
+
+  	Rectangle.hello = function() {
+  		return this;
+  	}
+
+
+  	var materials = [
+	  'Hydrogen',
+	  'Helium',
+	  'Lithium',
+	  'Beryllium'
+	];
+
+	materials.map(material => material.length);
+
+	function test(...args) {
+		return args.length;
+	}
+
+	function calculator(multiplier, ...args) {
+		return args.map((arg) => {
+			return multiplier * arg;
+		})
+	}
+
+	var o = {p: 25, q: 50};
+	var {p: foo, q: bar} = o;
+
+	var [a, b] = [1, 2];
+
+	function f() {
+		return [100, 200, 300, 400, 500];
+	}
+
+	var [d, e, ...f] = f();
+
+
+	({s, t, ...u} = {o: 5, s: 10, t: 20, u:30, v: 40})
+
+
+
+  </script>
+  </body>
+</html>

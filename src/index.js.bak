@@ -1,0 +1,46 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Header from './Header.js'
+import Footer from './Footer.js'
+import Timer from './Timer.js'
+
+import TodoApp from './TodoApp.js'
+
+import Button from './components/Button.jsx'
+
+class Layout extends React.Component {
+	constructor (props) {
+		super(props);
+		this.state = {
+			person: 'Ramesh',
+			age: '28'
+		}
+		this.changePerson = this.changePerson.bind(this);
+		this.updateAge = this.updateAge.bind(this);
+	}
+
+	changePerson(person) {
+		this.setState({person});
+	}
+
+	updateAge(age) {
+		this.setState({age});
+	}
+
+	render() {
+		
+		return (
+			<div>
+				<Header title={this.state.person} changeTitle={this.changePerson} personAge={this.updateAge} getAge={this.state.age} />
+				
+				<Timer />
+				<br/><br/>
+				<TodoApp />
+				<Button aria-label="hello">hello</Button>
+			</div>
+		)
+	}
+}
+
+ReactDOM.render(<Layout />, document.getElementById('element'));
