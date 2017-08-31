@@ -8,12 +8,12 @@ class TodoStore extends EventEmitter {
 		this.todoList = [
 			{
 				id: 12122121,
-				text: 'Learn React',
+				text: 'Todo 1',
 				complete: false
 			},
 			{
 				id: 334234234,
-				text: 'JUST Learn React',
+				text: 'Todo 2',
 				complete: false
 			}
 		]
@@ -41,6 +41,8 @@ class TodoStore extends EventEmitter {
 				console.log('deleted');
 			}
 		}
+
+		this.emit('change');
 	}
 
 
